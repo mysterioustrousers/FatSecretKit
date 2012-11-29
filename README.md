@@ -67,6 +67,7 @@ There are also native objects to represent resources returned by the API, includ
 New methods for fetching resources should be added to the `FSClient` class, and new native objects can be created as necessary. Naming conventions for client methods should follow the same convention:
 
 API: `foods.search`, iOS: `searchFoods`
+
 API: `food.get`, iOS: `getFood`
 
 etc.
@@ -74,6 +75,7 @@ etc.
 New methods/properties on native objects should follow a similar convention
 
 API: `trans_fat`, iOS: `transFat`
+
 API: `saturated_fat`, iOS: `saturatedFat`
 
 etc.
