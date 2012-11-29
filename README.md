@@ -11,12 +11,18 @@ Install via [CocoaPods](http://cocoapods.org) by adding this to your `Podfile`:
 pod 'FatSecretKit'
 ```
 
+Then `import` it as necessary
+
+```
+#import <FatSecretKit/FSClient.h>
+```
+
 ## Usage
 The toughest part of making your own client is the OAuth negotiation, so this should save you some precious hours. All you need is your OAuth consumer key and secret. Preferred usage is through the `sharedClient`:
 
 ```
 [FSClient sharedClient].oauthConsumerKey = @"12345";
-[FSClient sharedClient].oauthConsumerSecret = @"67890" ;
+[FSClient sharedClient].oauthConsumerSecret = @"67890";
 ```
 
 You should put that in your `AppDelegate.m` or similar, where it will only run once. You can always create your own clients with the usual `[[FSClient alloc] init]`.
