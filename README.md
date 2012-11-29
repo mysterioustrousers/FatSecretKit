@@ -59,8 +59,8 @@ There are also native objects to represent resources returned by the API, includ
 
 ## Limitations (and To-do list)
 
-* Only supports requests not specific to a user. In other words, it does not currently support [Delegated requests](http://platform.fatsecret.com/api/Default.aspx?screen=rapiauth)
-* All API methods are not implemented, only a few specific ones that Mysterious Trousers has had need for. Adding support for other APIs should be rather trivial, however. See the Contributing section.
+* Only supports requests not specific to a user. In other words, it does not currently support [Delegated requests](http://platform.fatsecret.com/api/Default.aspx?screen=rapiauth).
+* All API methods are not implemented, only a few specific ones that Mysterious Trousers has had need for. Adding support for other APIs is welcome and should be rather trivial. See the Contributing section.
 
 ## Contributing
 
@@ -80,7 +80,7 @@ API: `saturated_fat`, iOS: `saturatedFat`
 
 etc.
 
-Adding support for new API methods should create an appropriately named method inside `FSClient`, and it should support all required **and** optional parameters, though convenience methods are also welcome (see `searchFoods` methods as a reference.) 
+Adding support for new API methods requires creating an appropriately named method inside `FSClient`, and it should support all required **and** optional parameters, though convenience methods are also welcome (see `searchFoods` methods as a reference.) 
 
 ### Process:
 
