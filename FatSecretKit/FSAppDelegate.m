@@ -7,6 +7,7 @@
 //
 
 #import "FSAppDelegate.h"
+#import "FSClient.h"
 
 @implementation FSAppDelegate
 
