@@ -95,3 +95,9 @@ Adding support for new API methods requires creating an appropriately named meth
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Contributors
+[Parker Wightman](https://github.com/pwightman) ([@parkerwightman](http://twitter.com/parkerwightman))
+
+## Acknowledgements
+Thanks to [atebits](https://github.com/atebits) for his [OAuthCore](https://github.com/atebits/OAuthCore) library that made this much simpler. Thanks also to [Sam Vermette](https://github.com/samvermette) for his execellent [SVHTTPRequest](https://github.com/samvermette/SVHTTPRequest) library.
