@@ -86,7 +86,7 @@ API: `saturated_fat`, iOS: `saturatedFat`
 
 etc.
 
-Adding support for new API methods requires creating an appropriately named method inside `FSClient`, and it should support all required **and** optional parameters, though convenience methods are also welcome (see `searchFoods` methods as a reference.) 
+Adding support for new API methods requires creating an appropriately named method inside `FSClient`, and it should support all required **and** optional parameters, though convenience methods are also welcome (see `searchFoods` methods as a reference.) You can always questions on Twitter or through issues, we're nice guys.
 
 ### Process:
 
