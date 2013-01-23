@@ -41,7 +41,11 @@
 				[foods addObject:[FSFood foodWithJSON:food]];
 			}
 		} else {
-			foods = [@[ [FSFood foodWithJSON:[responseFoods objectForKey:@"food"]] ] mutableCopy];
+			if ([[responseFoods objectForKey:@"food"] count] == 0) {
+				foods = [@[] mutableCopy];
+			} else {
+				foods = [@[ [FSFood foodWithJSON:[responseFoods objectForKey:@"food"]] ] mutableCopy];
+			}
 		}
 		
 		NSInteger maxResults = [[[response objectForKey:@"foods"] objectForKey:@"max_results"] integerValue];

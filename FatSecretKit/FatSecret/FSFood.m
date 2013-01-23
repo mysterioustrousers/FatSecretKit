@@ -37,8 +37,12 @@
 				}
 				_servings = array;
 			} else {
-				_servings = @[ [FSServing servingWithJSON:servings] ];
-	}
+				if ([servings count] == 0) {
+					_servings = @[];
+				} else {
+					_servings = @[ [FSServing servingWithJSON:servings] ];
+				}
+			}
 		}
 	}
 	
