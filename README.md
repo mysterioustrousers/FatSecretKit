@@ -13,14 +13,14 @@ pod 'FatSecretKit'
 
 Then `import` it as necessary
 
-```
+```objc
 #import <FatSecretKit/FSClient.h>
 ```
 
 ## Usage
 The toughest part of making your own client is the OAuth negotiation, so this should save you some precious hours. All you need is your OAuth consumer key and secret. Preferred usage is through the `sharedClient`:
 
-```
+```objc
 [FSClient sharedClient].oauthConsumerKey = @"12345";
 [FSClient sharedClient].oauthConsumerSecret = @"67890";
 ```
@@ -31,7 +31,7 @@ You're all set to use the APIs.
 
 ### Food Search
 
-```
+```objc
 [[FSClient sharedClient] searchFoods:term
 						  completion:^(NSArray *foods, NSInteger maxResults, NSInteger totalResults, NSInteger pageNumber) {
 	// Use data as you will.
@@ -48,12 +48,11 @@ You're all set to use the APIs.
 	self.foods = foods;
 	[self.tableView reloadData];
 }];
-
 ```
 
 ### Get Food
 
-```
+```objc
 [[FSClient sharedClient] getFood:item.identifier
                       completion:^(FSFood *food) {
                           NSLog(@"Name: %@", food.name)
