@@ -9,7 +9,6 @@
 #import "FSClient.h"
 #import <CommonCrypto/CommonHMAC.h>
 #import "OAuthCore.h"
-#import <SVHTTPRequest/SVHTTPRequest.h>
 #import "FSFood.h"
 
 #define FAT_SECRET_API_ENDPOINT @"http://platform.fatsecret.com/rest/server.api"
@@ -90,12 +89,15 @@
                                                  nil, 
                                                  @"");
 
-    [SVHTTPRequest GET:[FAT_SECRET_API_ENDPOINT stringByAppendingFormat:@"?%@", authHeader]
-            parameters:nil
-            completion:^(id response, NSHTTPURLResponse *urlResponse, NSError *error) {
-                completionBlock(response);
-    }];
-
+	NSURL *url = [NSURL URLWithString:[FAT_SECRET_API_ENDPOINT stringByAppendingFormat:@"?%@", authHeader]];
+	[[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		if (data) {
+			id JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+			completionBlock(JSON);
+		} else {
+			completionBlock(nil);
+		}
+	}] resume];
 }
 
 - (NSDictionary *) defaultParameters {
